@@ -1,2 +1,6 @@
 
-Projects/DSB2017_DataPreprocessing/.vscode
+/.vscode
+!Projects/Luna16_DataPreprocessing/sample_patients/*
+*.raw
+*.mhd
+*.npy
