@@ -1,6 +1,6 @@
 
 /.vscode
-!Projects/Luna16_DataPreprocessing/sample_patients/*
+!/Projects/Luna16_DataPreprocessing/sample_patients/*
 *.raw
 *.mhd
 *.npy
