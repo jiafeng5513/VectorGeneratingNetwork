@@ -258,6 +258,6 @@ class nodules_crop(object):
 
 
 if __name__ == '__main__':
-    nc = nodules_crop(workspace)
+    nc = nodules_crop(workspace) 
     nc.annotations_crop()
     nc.candidates_crop()
