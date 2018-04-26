@@ -4,3 +4,5 @@
 *.raw
 *.mhd
 *.npy
+*.hdf5
+*.pyc
