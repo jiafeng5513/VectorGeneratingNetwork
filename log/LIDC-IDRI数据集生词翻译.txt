@@ -1,0 +1,48 @@
+Diagnosis at the Patient Level    对患者进行诊断
+0=Unknown                         未知
+1=benign or non-malignant disease 良性或非恶性疾病
+2= malignant, primary lung cancer 恶性，原发性肺癌
+3 = malignant metastatic          恶性转移
+
+
+ 
+Diagnosis Method                  诊断方法
+0 = unknown                       未知
+1 = review of radiological images to show 2 years of stable nodule  检查放射影像以显示2年稳定的结节
+2 = biopsy                        活检
+3 = surgical resection            手术切除
+4 = progression or response       进展或响应?
+
+
+
+
+Primary tumor site for metastatic disease  转移性疾病的原发性肿瘤部位
+
+
+Nodule 1/2/3/4
+Diagnosis at the Nodule Level        结节水平的诊断结果
+0=Unknown
+1=benign or non-malignant disease
+2= malignant, primary lung cancer
+3 = malignant metastatic
+
+
+Nodule 1/2/3/4
+Diagnosis Method at the Nodule Level  结节水平的诊断方法
+0 = unknown
+1 = review of radiological images to show 2 years of stable nodule
+2 = biopsy
+3 = surgical resection
+4 = progression or response
+
+
+
+subtlety
+internalStructure 内部结构
+calcification     钙化
+sphericity        球度
+margin            边缘
+lobulation        分叶
+spiculation       锯齿状
+texture           纹理
+malignancy        恶性
