@@ -161,10 +161,10 @@ ct_scan = read_ct_scan('./00cba091fa4ad62cc3200a657aeb957e')
 # get_segmented_lungs(ct_scan[71], True)
 # plt.show()
 
-# #实验4:对一个序列的图片进行形态学处理并绘制
-# segmented_ct_scan = segment_lung_from_ct_scan(ct_scan)
-# plot_ct_scan(segmented_ct_scan)
-# plt.show()
+#实验4:对一个序列的图片进行形态学处理并绘制
+segmented_ct_scan = segment_lung_from_ct_scan(ct_scan)
+plot_ct_scan(segmented_ct_scan)
+plt.show()
 
 # #实验5:使用强度进行肺分割(604对应-400HU,小于此值的过滤掉)
 # segmented_ct_scan = segment_lung_from_ct_scan(ct_scan)
@@ -173,32 +173,32 @@ ct_scan = read_ct_scan('./00cba091fa4ad62cc3200a657aeb957e')
 # plt.show()
 
 #实验6:remove the two largest connected component
-segmented_ct_scan = segment_lung_from_ct_scan(ct_scan)
-selem = ball(2)
-binary = binary_closing(segmented_ct_scan, selem)
+# segmented_ct_scan = segment_lung_from_ct_scan(ct_scan)
+# selem = ball(2)
+# binary = binary_closing(segmented_ct_scan, selem)
 
-label_scan = label(binary)
+# label_scan = label(binary)
 
-areas = [r.area for r in regionprops(label_scan)]
-areas.sort()
+# areas = [r.area for r in regionprops(label_scan)]
+# areas.sort()
 
-for r in regionprops(label_scan):
-    max_x, max_y, max_z = 0, 0, 0
-    min_x, min_y, min_z = 1000, 1000, 1000
+# for r in regionprops(label_scan):
+#     max_x, max_y, max_z = 0, 0, 0
+#     min_x, min_y, min_z = 1000, 1000, 1000
 
-    for c in r.coords:
-        max_z = max(c[0], max_z)
-        max_y = max(c[1], max_y)
-        max_x = max(c[2], max_x)
+#     for c in r.coords:
+#         max_z = max(c[0], max_z)
+#         max_y = max(c[1], max_y)
+#         max_x = max(c[2], max_x)
 
-        min_z = min(c[0], min_z)
-        min_y = min(c[1], min_y)
-        min_x = min(c[2], min_x)
-    if (min_z == max_z or min_y == max_y or min_x == max_x or r.area > areas[-3]):
-        for c in r.coords:
-            segmented_ct_scan[c[0], c[1], c[2]] = 0
-    else:
-        index = (max((max_x - min_x), (max_y - min_y), (max_z - min_z))) / (min((max_x - min_x), (max_y - min_y), (max_z - min_z)))
+#         min_z = min(c[0], min_z)
+#         min_y = min(c[1], min_y)
+#         min_x = min(c[2], min_x)
+#     if (min_z == max_z or min_y == max_y or min_x == max_x or r.area > areas[-3]):
+#         for c in r.coords:
+#             segmented_ct_scan[c[0], c[1], c[2]] = 0
+#     else:
+#         index = (max((max_x - min_x), (max_y - min_y), (max_z - min_z))) / (min((max_x - min_x), (max_y - min_y), (max_z - min_z)))
 
-plot_3d(segmented_ct_scan, 604)
-plt.show()
+# plot_3d(segmented_ct_scan, 604)
+# plt.show()
