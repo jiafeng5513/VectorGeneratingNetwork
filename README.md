@@ -27,7 +27,8 @@ Vector-Generating Network
    组织结构:由1010个名称形如LIDC-IDRI-XXXX文件夹组成,每个文件夹存储一个病人的数据;<br>
            病人文件夹下,是study文件夹,注意有的病人有两个study,有的只有一个study;共有1308个study;<br>
            study文件夹下,是series文件夹,注意所有的study都只有一个series;共有1308个series,其中1018个CTseries,290个CR/DX series<br>
-           series文件夹下有该series的全部slice和一个xml文件<br>
+           series文件夹下有该series的全部slice和一个xml文件,需要注意的是,虽然dcm文件的名字上标注了序号,但是这个序号的顺序并不是序列真实的顺序<br>
+           真实的顺序必须按照dcm的Instance Number字段来排列<br>
            除此之外,还有数个表格文件<br>
    标签形式:series文件夹下的xml文件中,存储四个医生对一个series的两阶段标注,有效信息有roi,由9个特征组成的分类信息等,比较复杂.<br>
            另外,lidc-idri nodule counts.xlsx描述每个病人的结节总数,3mm以上的结节数,3mm以下的结节数<br>
