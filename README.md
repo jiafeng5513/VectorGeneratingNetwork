@@ -29,7 +29,7 @@ Vector-Generating Network
            study文件夹下,是series文件夹,注意所有的study都只有一个series;共有1308个series,其中1018个CTseries,290个CR/DX series<br>
            series文件夹下有该series的全部slice和一个xml文件,需要注意的是,dcm文件按名称排序的顺序并不是解刨学顺序,而Instance Number的顺序是解刨学顺序<br>
            除此之外,还有数个表格文件<br>
-   标签形式:series文件夹下的xml文件中,存储标记信息,xml标注含义请看[XmlPattern](https://github.com/AngelaViVi/VectorGeneratingNetwork/Projects/LIDCReader/XmlPattern.xml).<br>
+   标签形式:series文件夹下的xml文件中,存储标记信息,xml标注含义请看[XmlPattern](https://github.com/AngelaViVi/VectorGeneratingNetwork/blob/master/Projects/LIDCReader/XmlPattern.xml).<br>
            另外,lidc-idri nodule counts.xlsx描述每个病人的结节总数,3mm以上的结节数,3mm以下的结节数<br>
            LIDC-IDRI_MetaData.csv中给出了每个patient ID,扫描形式,seriesID的对应关系以及一些其他的元数据信息<br>
            tcia-diagnosis-data-2012-04-20.xls中存储了158个病人的详细诊断信息,包括病人层次的诊断结论,原发位置,确诊方式以及结节层次的诊断结论和确诊方式等<br>
