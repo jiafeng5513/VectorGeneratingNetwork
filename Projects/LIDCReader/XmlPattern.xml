@@ -19,6 +19,7 @@
   </ResponseHeader>
 
   <readingSession msg="每个readingSession中存储一个放射科医生的标记结果,可能有1~4个该节点并列">
+      <!-- 不完全统计,绝大多数情况下四个医生会给出差不多的标注 -->
       <annotationVersion>注释版本</annotationVersion>
 
       <servicingRadiologistID>医生ID</servicingRadiologistID>
@@ -38,9 +39,9 @@
           <malignancy>5</malignancy>
         </characteristics>
 
-        <roi msg="结节区域,可能有多个该节点并列.!!!!!!需要验证这些roi是否完整的标注了一个结节的整个区域">
-          <imageZposition>结节的Z位置,该值只有两种可能形式,-XXX.0或-XXX.5</imageZposition>
-          <imageSOP_UID>该roi对应的dcm图片文件的UID</imageSOP_UID>
+        <roi msg="结节区域,可能有多个该节点并列.多个ROI依次对应:按照解刨学顺序排列图像时,第一次张能分辨出结节的图片上的某区域到最后一张能分辨出结节的某区域">
+          <imageZposition>对应的dcm文件的Slice Location</imageZposition>
+          <imageSOP_UID>对应的dcm文件的SOP Instance UID</imageSOP_UID>
           <inclusion>TRUE,不知道是什么玩意</inclusion>
           <edgeMap msg="里面是一对xy值,可能有多个该节点并列,全部坐标可以形成一个封闭区域">
             <xCoord>312</xCoord>
@@ -51,8 +52,8 @@
 
       <nonNodule msg="每个nonNodule中是一个非结节,可能有多个该节点并列">
         <nonNoduleID>非节点编号,这个字段没有任何规律</nonNoduleID>
-        <imageZposition>非结节的Z位置,该值只有两种可能形式,-XXX.0或-XXX.5</imageZposition>
-        <imageSOP_UID>该非结节中心对应的dcm图片文件的UID</imageSOP_UID>
+        <imageZposition>对应的dcm文件的Slice Location</imageZposition>
+        <imageSOP_UID>对应的dcm文件的SOP Instance UID</imageSOP_UID>
         <locus msg="里面是一对xy值,每个nonNodule中只有一个该节点,表示该非结节的中心点的xy坐标">
           <xCoord>396</xCoord>
           <yCoord>216</yCoord>

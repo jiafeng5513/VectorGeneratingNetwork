@@ -33,6 +33,7 @@ Vector-Generating Network
            另外,lidc-idri nodule counts.xlsx描述每个病人的结节总数,3mm以上的结节数,3mm以下的结节数<br>
            LIDC-IDRI_MetaData.csv中给出了每个patient ID,扫描形式,seriesID的对应关系以及一些其他的元数据信息<br>
            tcia-diagnosis-data-2012-04-20.xls中存储了158个病人的详细诊断信息,包括病人层次的诊断结论,原发位置,确诊方式以及结节层次的诊断结论和确诊方式等<br>
+   读取程序:请看`./Project/LIDCReader`.<br>
 ### 参考项目
 1. [DSB2017第一名:grt123](https://github.com/lfz/DSB2017)<br>
 2. [Unet细胞分割](https://github.com/zhixuhao/unet)<br>
