@@ -14,23 +14,22 @@ Vector-Generating Network
 4. 使用NetC给出诊断结论<br>
 
 ### 数据集
-1. Luna16:<br>
+1. [Luna16](https://luna16.grand-challenge.org/):<br>
    文件形式:mhd/raw,csv<br>
    组织结构:所有的mhd/raw文件存储在一个目录下;有两个csv文件,存储所有的标签;每一对mhd/raw中是一个序列.<br>
    标签形式:一个csv文件列出所有的候选结节,标记有定位信息和(0/1)标签,标记为1的结节在另一个csv文件中标有有直径信息和定位信息<br>
-2. DSB2017:<br>
+2. [DSB2017](https://www.kaggle.com/c/data-science-bowl-2017):<br>
    文件形式:dcm,csv<br>
    组织结构:图像数据分为两个stage文件夹,每个stage下存放一些series文件夹,每个series文件夹下存放一些dcm文件,每个dcm文件存储一张切片.<br>
    标签形式:在csv文件中对每个序列给出(0/1)标签<br>
-3. TCIA LIDC-IDRI:<br>
+3. [TCIA LIDC-IDRI](https://wiki.cancerimagingarchive.net/display/Public/LIDC-IDRI):<br>
    文件形式:dcm,xml,csv,xlsx<br>
    组织结构:由1010个名称形如LIDC-IDRI-XXXX文件夹组成,每个文件夹存储一个病人的数据;<br>
            病人文件夹下,是study文件夹,注意有的病人有两个study,有的只有一个study;共有1308个study;<br>
            study文件夹下,是series文件夹,注意所有的study都只有一个series;共有1308个series,其中1018个CTseries,290个CR/DX series<br>
-           series文件夹下有该series的全部slice和一个xml文件,需要注意的是,虽然dcm文件的名字上标注了序号,但是这个序号的顺序并不是序列真实的顺序<br>
-           真实的顺序必须按照dcm的Instance Number字段来排列<br>
+           series文件夹下有该series的全部slice和一个xml文件,需要注意的是,dcm文件按名称排序的顺序并不是解刨学顺序,而Instance Number的顺序是解刨学顺序<br>
            除此之外,还有数个表格文件<br>
-   标签形式:series文件夹下的xml文件中,存储四个医生对一个series的两阶段标注,有效信息有roi,由9个特征组成的分类信息等,比较复杂.<br>
+   标签形式:series文件夹下的xml文件中,存储标记信息,xml标注含义请看[XmlPattern](https://github.com/AngelaViVi/VectorGeneratingNetwork/Projects/LIDCReader/XmlPattern.xml).<br>
            另外,lidc-idri nodule counts.xlsx描述每个病人的结节总数,3mm以上的结节数,3mm以下的结节数<br>
            LIDC-IDRI_MetaData.csv中给出了每个patient ID,扫描形式,seriesID的对应关系以及一些其他的元数据信息<br>
            tcia-diagnosis-data-2012-04-20.xls中存储了158个病人的详细诊断信息,包括病人层次的诊断结论,原发位置,确诊方式以及结节层次的诊断结论和确诊方式等<br>
