@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 
-# xml_path = 'G:/DataSet/TCIA_LIDC-IDRI/LIDC-IDRI/LIDC-IDRI-0001/1.3.6.1.4.1.14519.5.2.1.6279.6001.298806137288633453246975630178/1.3.6.1.4.1.14519.5.2.1.6279.6001.179049373636438705059720603192/069.xml'
-xml_path = 'e:/Python/VectorGeneratingNetwork/Projects/LIDCReader/example.xml'
+xml_path = 'G:/DataSet/TCIA_LIDC-IDRI/LIDC-IDRI/LIDC-IDRI-0001/1.3.6.1.4.1.14519.5.2.1.6279.6001.298806137288633453246975630178/1.3.6.1.4.1.14519.5.2.1.6279.6001.179049373636438705059720603192/069.xml'
+# xml_path = 'e:/Python/VectorGeneratingNetwork/Projects/LIDCReader/example.xml'
 with open(xml_path, 'r') as xml_file:
         markup = xml_file.read()
 xml = BeautifulSoup(markup, features="xml")
