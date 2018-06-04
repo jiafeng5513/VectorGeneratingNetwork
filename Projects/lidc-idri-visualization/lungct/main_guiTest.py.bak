@@ -5,8 +5,8 @@ Created on Mon May 20 14:30:47 2015
 @author: tizita nesibu
 """
 
-import tkinter
-import tkinter.filedialog
+import Tkinter
+import tkFileDialog
 
 from os import listdir
 from os.path import isfile, join, dirname, abspath
@@ -46,14 +46,14 @@ class DicomImgData:
         return key in self.components
 
             
-class MainGui_tk(tkinter.Tk):
+class MainGui_tk(Tkinter.Tk):
     
     def __init__(self, parent):
-        tkinter.Tk.__init__(self, parent)
+        Tkinter.Tk.__init__(self, parent)
         
         self.parent = parent
-        self.visualframe = tkinter.Frame(self)
-        self.controlframe = tkinter.Frame(self)
+        self.visualframe = Tkinter.Frame(self)
+        self.controlframe = Tkinter.Frame(self)
         self.dicom_file_path = []
         self.dicom_data = []
         self.dicom_photo_ref = []
@@ -68,17 +68,17 @@ class MainGui_tk(tkinter.Tk):
         self.controlframe.grid(column=0,row=1,sticky='SEW')
         
         # Create canvas for image
-        self.canvas = tkinter.Canvas(self.visualframe, width=640, height=480,bg='white')
+        self.canvas = Tkinter.Canvas(self.visualframe, width=640, height=480,bg='white')
         self.canvas.grid(column=0, row=0)
         self.canvas_shape = (640,512)
         
         # create listbox for list of dicom images
-        self.listbx = tkinter.Listbox(self.visualframe, height=30)
+        self.listbx = Tkinter.Listbox(self.visualframe, height=30)
         self.listbx.grid(column=1,row=0)
         self.listbx.bind("<Double-Button-1>", self.OnlistboxClick)
         
         #create the scroll bar
-        self.scrollbar = tkinter.Scrollbar(self.visualframe, orient=tkinter.VERTICAL)
+        self.scrollbar = Tkinter.Scrollbar(self.visualframe, orient=Tkinter.VERTICAL)
         self.scrollbar.grid(column=2,row=0,sticky='NS')
 
         #associate the scroll         
@@ -86,19 +86,19 @@ class MainGui_tk(tkinter.Tk):
         self.scrollbar.config(command=self.listbx.yview)
         
 
-        self.load_button = tkinter.Button(self.controlframe,
-                                          text='Load DICOM',
+        self.load_button = Tkinter.Button(self.controlframe,
+                                          text=u'Load DICOM',
                                           command=self.OnButtonLoadDicom)
         self.load_button.grid(column=1, row=0,rowspan=2, padx=5, pady=5, sticky='NEWS')
         
-        self.clear_button = tkinter.Button(self.controlframe,
-                                          text='Clear Data',
+        self.clear_button = Tkinter.Button(self.controlframe,
+                                          text=u'Clear Data',
                                           command=self.OnButtonClearData)
         self.clear_button.grid(column=2, row=0, rowspan=2, padx=5, pady=5, sticky='NEWS')
         
-        logo_fname = dirname(abspath(__file__)) + '/data/logo.gif'
-        self.img = tkinter.PhotoImage(file=logo_fname)
-        self.logo_canvas = tkinter.Canvas(self.controlframe, 
+        logo_fname = dirname(abspath(__file__)) + '/logo.gif'
+        self.img = Tkinter.PhotoImage(file=logo_fname)
+        self.logo_canvas = Tkinter.Canvas(self.controlframe, 
                                           width=125, height=85, bg='white')
         self.logo_canvas.grid(column=0, row=0, rowspan=2, sticky='NEWS')
         self.image_on_canvas = self.logo_canvas.create_image(0,0, anchor='nw', image=self.img)
@@ -111,19 +111,19 @@ class MainGui_tk(tkinter.Tk):
         
     def OnButtonLoadDicom(self):
         
-        self.dicom_file_path = tkinter.filedialog.askdirectory(initialdir='/opt/DataSet/') + '/'
+        self.dicom_file_path = tkFileDialog.askdirectory(initialdir='/opt/DataSet/') + '/'
         try:
             flist = [f for f in listdir(self.dicom_file_path) if (isfile(join(self.dicom_file_path,f)) and f.endswith('.dcm')) ]
         except IOError:
-            print("ERROR, openning files in %s " % self.dicom_file_path)
-            self.listbx.delete(0, tkinter.END)
+            print "ERROR, openning files in %s " % self.dicom_file_path
+            self.listbx.delete(0, Tkinter.END)
             return
         
-        self.listbx.delete(0, tkinter.END)
+        self.listbx.delete(0, Tkinter.END)
 
         flist.sort()
         for f in flist:
-            self.listbx.insert(tkinter.END, f)
+            self.listbx.insert(Tkinter.END, f)
         
         return
 
@@ -168,12 +168,12 @@ class MainGui_tk(tkinter.Tk):
             self.canvas.delete('all')
             self.canvas.itemconfig(self.dicom_on_canvas, image=self.dicom_photo_ref)
             self.dicom_img_first = True
-        self.listbx.delete(0, tkinter.END)
+        self.listbx.delete(0, Tkinter.END)
         pass
 
         
 def main2():
-    print("Python Gui tutorials! ;)!")
+    print "Python Gui tutorials! ;)!"
     simple_app = SimpleApp_tk(None)
     simple_app.title("Lung-ct Classification")
     simple_app.mainloop()
@@ -205,9 +205,9 @@ if __name__ == "__main__":
 
 
 
-class SimpleApp_tk(tkinter.Tk):
+class SimpleApp_tk(Tkinter.Tk):
     def __init__(self, parent):
-        tkinter.Tk.__init__(self, parent)
+        Tkinter.Tk.__init__(self, parent)
         
         self.parent = parent
         self.initialize()
@@ -215,21 +215,21 @@ class SimpleApp_tk(tkinter.Tk):
     def initialize(self):
         self.grid()
         
-        self.txtVariable = tkinter.StringVar()
-        self.txtinput = tkinter.Entry(self, textvariable=self.txtVariable) #passing self as parent parameter
+        self.txtVariable = Tkinter.StringVar()
+        self.txtinput = Tkinter.Entry(self, textvariable=self.txtVariable) #passing self as parent parameter
         self.txtinput.grid(column=0, row=0, sticky='EW')
         self.txtinput.bind("<Return>", self.OnPressEnter)
-        self.txtVariable.set("Enter text here")
+        self.txtVariable.set(u"Enter text here")
         
-        self.button = tkinter.Button(self, text='Click me!',
+        self.button = Tkinter.Button(self, text=u'Click me!',
                                      command=self.OnButtonClick)
         self.button.grid(column=1, row=0)
         
-        self.labelVariable = tkinter.StringVar()
-        self.label = tkinter.Label(self, textvariable=self.labelVariable,
+        self.labelVariable = Tkinter.StringVar()
+        self.label = Tkinter.Label(self, textvariable=self.labelVariable,
                                    anchor='w',fg='white',bg='blue')
         self.label.grid(column=0, row=1, columnspan=2,sticky='EW')
-        self.labelVariable.set("Hello World!")
+        self.labelVariable.set(u"Hello World!")
         
         self.grid_columnconfigure(0,weight=1)
         self.resizable(True, False)
@@ -237,14 +237,14 @@ class SimpleApp_tk(tkinter.Tk):
         self.geometry(self.geometry())
         
         self.txtinput.focus_set()
-        self.txtinput.selection_range(0, tkinter.END)
+        self.txtinput.selection_range(0, Tkinter.END)
     
     def OnButtonClick(self):
         self.labelVariable.set(self.txtVariable.get()+" (button-click) ")
         self.txtinput.focus_set()
-        self.txtinput.selection_range(0, tkinter.END)
+        self.txtinput.selection_range(0, Tkinter.END)
     
     def OnPressEnter(self,event):
         self.labelVariable.set(self.txtVariable.get() + " (pressed-enter) ")
         self.txtinput.focus_set()
-        self.txtinput.selection_range(0, tkinter.END)
+        self.txtinput.selection_range(0, Tkinter.END)

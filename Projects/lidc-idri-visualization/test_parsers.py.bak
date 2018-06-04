@@ -20,7 +20,7 @@ def main():
     #main_app = LIDCInterfaceTk(None, lung_ct_path="/opt/DataSet/lung-ct/")
     #main_app = LIDCInterfaceTk(None, lung_ct_path="/opt/lung_ct/LIDC/LIDC-IDRI/")
     main_app = LIDCInterfaceTk(None, 
-                               lung_ct_path="C:/Users/tizita/Documents/LIDC/LIDC-IDRI")
+                               lung_ct_path="G:/DataSet/TCIA_LIDC-IDRI/LIDC-IDRI")
     main_app.title("LIDC LUNG-CT Visualizer")
     main_app.mainloop()
     

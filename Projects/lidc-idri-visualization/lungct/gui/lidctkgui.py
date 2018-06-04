@@ -215,8 +215,10 @@ class LIDCInterfaceTk(tkinter.Tk):#inharits from Tkinter.Tk
             self.withdraw()      #to not display the image visualizer window when the msg_bx is displayed
             #msg_bx.lbl_txt.set("Loading and parsing necessary data")
             bname = basename(self.xml_filename)   #(python's fun)-> to extract the file neame from the path
-            self.patient_no = int(bname[:bname.find('.')])   #to extract patient_no e.g. int(0068) -> 68
-            
+            #self.patient_no = int(bname[:bname.find('.')])   #to extract patient_no e.g. int(0068) -> 68
+            self.patient_no = 1   #to extract patient_no e.g. int(0068) -> 68
+
+            #这里不对 ,应该用csv文件中的元数据通过seriesID反查patientID
             
             self.xml_parser = LIDCXmlParser()
             self.xml_parser.set_xml_file(self.xml_filename)
