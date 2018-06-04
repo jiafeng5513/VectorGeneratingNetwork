@@ -26,6 +26,8 @@ class LidcAnalyzerControler(QtWidgets.QWidget, Ui_LidcAnalyzer):
         self.lineEdit_LidcRootDir.setText(dir_path)
     def OnAnalyzeStart(self):
         print("开始分析")
+        #构造LidcDate数据对象,并进行合理性验证
+        #
     # 显示ROI
     def OnShowROI(self):
         print("显示ROi")

@@ -2,20 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd845543-7644-44ce-b3e4-674ffcca3e5e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projects/LIDCReader/Controler/Controler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projects/LIDCReader/Controler/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projects/LIDCReader/View/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projects/LIDCReader/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projects/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/VectorGeneratingNetwork.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VectorGeneratingNetwork.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Projects/LIDCReader/Model/LidcData.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Projects/LIDCReader/Model/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/LIDCReader/XmlPattern.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/LIDCReader/example.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/LIDCReader/xmlReader.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/lidc-idri-visualization/lungct/gui/lidctkgui.py" beforeDir="false" afterPath="$PROJECT_DIR$/Projects/lidc-idri-visualization/lungct/gui/lidctkgui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/lidc-idri-visualization/lungct/main_guiTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Projects/lidc-idri-visualization/lungct/main_guiTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/lidc-idri-visualization/test_parsers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projects/LIDCReader/Controler/Controler.py" beforeDir="false" afterPath="$PROJECT_DIR$/Projects/LIDCReader/Controler/Controler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projects/lidc-idri-visualization/.idea/dictionaries/Anna.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projects/lidc-idri-visualization/.idea/lidc-idri-visualization.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projects/lidc-idri-visualization/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projects/lidc-idri-visualization/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projects/lidc-idri-visualization/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projects/lidc-idri-visualization/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projects/lidc-idri-visualization/lungct/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projects/lidc-idri-visualization/lungct/data/logo.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projects/lidc-idri-visualization/lungct/gui/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projects/lidc-idri-visualization/lungct/gui/lidctkgui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projects/lidc-idri-visualization/lungct/gui/main_gui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projects/lidc-idri-visualization/lungct/main_guiTest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projects/lidc-idri-visualization/lungct/main_guiTest.py.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projects/lidc-idri-visualization/lungct/parser/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projects/lidc-idri-visualization/lungct/parser/lidcxmlparser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projects/lidc-idri-visualization/lungct/structs/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projects/lidc-idri-visualization/lungct/structs/annotstructs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projects/lidc-idri-visualization/lungct/structs/visstructs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projects/lidc-idri-visualization/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projects/lidc-idri-visualization/test_parsers.py.bak" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,17 +35,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/VectorGeneratingNetwork$LidcData.coverage" NAME="LidcData Coverage Results" MODIFIED="1528127307475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/LIDCReader/Model" />
     <SUITE FILE_PATH="coverage/VectorGeneratingNetwork$main.coverage" NAME="main Coverage Results" MODIFIED="1528028912751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/lidc-idri-visualization" />
     <SUITE FILE_PATH="coverage/VectorGeneratingNetwork$qvtkWithPy.coverage" NAME="qvtkWithPy Coverage Results" MODIFIED="1528080899570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/LIDCReader" />
     <SUITE FILE_PATH="coverage/VectorGeneratingNetwork$qvtkWithPy2.coverage" NAME="qvtkWithPy2 Coverage Results" MODIFIED="1528007595785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/LIDCReader" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Controler.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Controler.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/Controler/Controler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="759">
-              <caret line="48" column="22" lean-forward="true" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+            <state relative-caret-position="414">
+              <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -43,13 +54,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LidcData.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/Model/LidcData.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+              <folding>
+                <element signature="e#314#323#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="207">
               <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
               <folding>
-                <element signature="e#0#40#0" expanded="true" />
+                <element signature="e#0#53#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -58,8 +81,8 @@
       <file leaf-file-name="LidcAnalyzerView.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/View/LidcAnalyzerView.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="179" column="70" lean-forward="true" selection-start-line="179" selection-start-column="70" selection-end-line="179" selection-end-column="70" />
+            <state relative-caret-position="161">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -90,6 +113,7 @@
         <option value="$PROJECT_DIR$/Projects/LIDCReader/Controler.py" />
         <option value="$PROJECT_DIR$/Projects/LIDCReader/main.py" />
         <option value="$PROJECT_DIR$/Projects/LIDCReader/Controler/Controler.py" />
+        <option value="$PROJECT_DIR$/Projects/LIDCReader/Model/LidcData.py" />
       </list>
     </option>
   </component>
@@ -102,9 +126,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="308" />
-    <option name="y" value="-13" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-78" />
+    <option name="y" value="185" />
     <option name="width" value="1400" />
     <option name="height" value="865" />
   </component>
@@ -116,7 +140,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -140,12 +163,20 @@
               <item name="VectorGeneratingNetwork" type="462c0819:PsiDirectoryNode" />
               <item name="Projects" type="462c0819:PsiDirectoryNode" />
               <item name="LIDCReader" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VectorGeneratingNetwork" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VectorGeneratingNetwork" type="462c0819:PsiDirectoryNode" />
+              <item name="Projects" type="462c0819:PsiDirectoryNode" />
+              <item name="LIDCReader" type="462c0819:PsiDirectoryNode" />
               <item name="View" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -200,6 +231,25 @@
       <option name="SCRIPT_NAME" value="E:\Python\VectorGeneratingNetwork\Projects\LIDCReader\View\LidcAnalyzerView.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="LidcData" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="VectorGeneratingNetwork" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Projects/LIDCReader/Model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Projects/LIDCReader/Model/LidcData.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
@@ -279,40 +329,21 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="qvtkWithPy2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="VectorGeneratingNetwork" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Projects/LIDCReader" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="E:\Python\VectorGeneratingNetwork\Projects\LIDCReader\qvtkWithPy.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <list>
       <item itemvalue="Python.__init__" />
-      <item itemvalue="Python.qvtkWithPy2" />
       <item itemvalue="Python.qvtkWithPy" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.main (1)" />
       <item itemvalue="Python.LidcAnalyzerView" />
+      <item itemvalue="Python.LidcData" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main (1)" />
+        <item itemvalue="Python.LidcData" />
         <item itemvalue="Python.LidcAnalyzerView" />
         <item itemvalue="Python.qvtkWithPy" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.qvtkWithPy2" />
       </list>
     </recent_temporary>
   </component>
@@ -330,7 +361,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-78" y="185" width="1400" height="865" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -340,7 +371,7 @@
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32978722" />
       <window_info anchor="bottom" x="-214" y="496" width="1920" height="389" id="Run" order="2" weight="0.41382977" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19166666" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26589596" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -366,6 +397,43 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/Controler/Controler.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/View/LidcAnalyzerView.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4117">
+          <caret line="179" column="70" lean-forward="true" selection-start-line="179" selection-start-column="70" selection-end-line="179" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/Model/LidcData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="943">
+          <caret line="41" column="57" selection-start-line="41" selection-start-column="57" selection-end-line="41" selection-end-column="57" />
+          <folding>
+            <element signature="e#314#323#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/Controler/Controler.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
           <folding>
@@ -386,7 +454,7 @@
         <state relative-caret-position="207">
           <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
           <folding>
-            <element signature="e#0#40#0" expanded="true" />
+            <element signature="e#0#53#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -480,29 +548,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/main.py">
+    <entry file="file://D:/Libraries/Anaconda3/Lib/genericpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="148" selection-start-line="148" selection-end-line="148" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/Model/LidcData.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
-          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
           <folding>
-            <element signature="e#0#40#0" expanded="true" />
+            <element signature="e#314#323#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/Controler/Controler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/View/LidcAnalyzerView.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="179" column="70" lean-forward="true" selection-start-line="179" selection-start-column="70" selection-end-line="179" selection-end-column="70" />
+        <state relative-caret-position="161">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/Controler/Controler.py">
+    <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="48" column="22" lean-forward="true" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+        <state relative-caret-position="207">
+          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
           <folding>
-            <element signature="e#0#42#0" expanded="true" />
+            <element signature="e#0#53#0" expanded="true" />
           </folding>
         </state>
       </provider>
