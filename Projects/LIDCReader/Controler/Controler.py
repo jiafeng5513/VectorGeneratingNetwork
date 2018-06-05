@@ -1,6 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from View.LidcAnalyzerView import Ui_LidcAnalyzer
 from PyQt5.QtWidgets import QFileDialog
+from Model import LidcData
 
 class LidcAnalyzerControler(QtWidgets.QWidget, Ui_LidcAnalyzer):
     def __init__(self):
@@ -27,6 +28,8 @@ class LidcAnalyzerControler(QtWidgets.QWidget, Ui_LidcAnalyzer):
     def OnAnalyzeStart(self):
         print("开始分析")
         #构造LidcDate数据对象,并进行合理性验证
+
+        self.LidcData=LidcData(self.lineEdit_LidcRootDir.text())
         #
     # 显示ROI
     def OnShowROI(self):
