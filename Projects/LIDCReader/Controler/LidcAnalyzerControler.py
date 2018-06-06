@@ -1,7 +1,9 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from View.LidcAnalyzerView import Ui_LidcAnalyzer
 from PyQt5.QtWidgets import QFileDialog
-from Model import LidcData
+from Model.LidcData import LidcData
+from Controler.LoadingControler import LoadingControler
+import time
 
 class LidcAnalyzerControler(QtWidgets.QWidget, Ui_LidcAnalyzer):
     def __init__(self):
@@ -27,10 +29,20 @@ class LidcAnalyzerControler(QtWidgets.QWidget, Ui_LidcAnalyzer):
         self.lineEdit_LidcRootDir.setText(dir_path)
     def OnAnalyzeStart(self):
         print("开始分析")
-        #构造LidcDate数据对象,并进行合理性验证
+        self.LidcData = LidcData()
+        self.LidcData.init(self.lineEdit_LidcRootDir.text())
+        self.progressWidget = LoadingControler()
+        self.LidcData.SetUpProgressBarSignal.connect(self.progressWidget.SetUpProgressBar)
+        self.LidcData.MoveSignal.connect(self.progressWidget.MoveStep)
+        self.LidcData.SendTextSignal.connect(self.progressWidget.SendTest)
+        self.LidcData.AllCompletedSignal.connect(self.OnDataLoadCompleted)
+        self.progressWidget.show()
+        self.LidcData.start()
 
-        self.LidcData=LidcData(self.lineEdit_LidcRootDir.text())
-        #
+    # 初始化主界面上的一切功能
+    def OnDataLoadCompleted(self):
+        print("数据加载完成,主界面开始交互")
+        self.plainTextEdit.appendPlainText("数据加载完成,主界面开始交互")
     # 显示ROI
     def OnShowROI(self):
         print("显示ROi")

@@ -1,7 +1,6 @@
-from Controler.Controler import LidcAnalyzerControler
+from Controler.LidcAnalyzerControler import LidcAnalyzerControler
 from PyQt5.QtWidgets import QApplication
 import sys
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
