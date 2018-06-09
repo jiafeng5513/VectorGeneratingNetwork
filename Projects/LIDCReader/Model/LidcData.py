@@ -37,9 +37,9 @@ class LidcSeries(object):
             print("找到排序缓存,跳过文件排序")
             SortFile = open(self.SeriesAbsPath + "\\DcmList.txt", 'r')
             lines = SortFile.readlines()  # 读取全部内容
-            self.XmlFilePath = lines[0]  # 已经取出xml文件
+            self.XmlFilePath = lines[0].replace('\n', '')  # 已经取出xml文件
             for i in range(1, len(lines)):  # 读取排好序的dcm列表
-                self.DcmFileList.append(lines[i])
+                self.DcmFileList.append(lines[i].replace('\n', ''))
         else:
             # 没找到当前series的排序缓存文件
             itemNames = os.listdir(self.SeriesAbsPath)  # 获取该目录下的所有文件
