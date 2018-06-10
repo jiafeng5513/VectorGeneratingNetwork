@@ -7,15 +7,20 @@ from Controler.LoadingControler import LoadingControler
 import pydicom
 import pylab
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as figureCanvas
+from Model.TableData import TableData
+from PyQt5.QtGui import QStandardItemModel
+from PyQt5.QtWidgets import QHeaderView
 
 class LidcAnalyzerControler(QtWidgets.QWidget, Ui_LidcAnalyzer):
+    TableDataSignal = pyqtSignal(int, int, str)
+
     def __init__(self):
         super(LidcAnalyzerControler, self).__init__()
         self.setupUi(self)
         # 尝试绘图
         self.figure = pylab.gcf()  # 返回当前的figure
         self.DcmCanvas = figureCanvas(self.figure)
-        #绑定信号槽
+        # 绑定信号槽
         self.pushButton_OpenLidc.clicked.connect(self.OnOpenLidcFolder)
         self.pushButton_ShowROI.clicked.connect(self.OnShowROI)
         self.pushButton_ShowLocus.clicked.connect(self.OnShowLocus)
@@ -26,10 +31,20 @@ class LidcAnalyzerControler(QtWidgets.QWidget, Ui_LidcAnalyzer):
         self.pushButton_BackSeries.clicked.connect(self.OnBackSeries)
         self.pushButton_StartAnalyze.clicked.connect(self.OnAnalyzeStart)
         self.verticalScrollBar.valueChanged.connect(self.OnMoveScrollBar)
-        #QObject.connect(self.verticalScrollBar, pyqtSignal("valueChanged(int)"), self, pyqtSlot("OnMoveScrollBar(int)"))
         self.gridLayout_ForImg.addWidget(self.DcmCanvas)
         self.verticalScrollBar.setEnabled(False)
-    #=======================================================================
+
+        self.TableData = TableData()  # 声明类
+        self.Model_Data = QStandardItemModel(4, 4)  # 初始化一个模型QStandardItemModel，4行13列
+        self.TableData.TableViewInit(self.tableView, self.Model_Data)  # 调用类TableData中初始化表格函数
+        self.tableView.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
+        self.tableView.horizontalHeader().setStyleSheet("QHeaderView::section{background:skyblue;}")
+        self.tableView.verticalHeader().setStyleSheet("QHeaderView::section{background:skyblue;}")
+        self.TableDataSignal.connect(self.TableData.Model_setItem)  # 这里采用信号槽来绑定Model_setItem进行数据更新
+        self.TableDataSignal.emit(0, 1, 'sdfsdf')  # 这里为表格添加一个数据，信号发送
+
+
+    # =======================================================================
         """
         定义主界面上的槽函数
         """
@@ -47,7 +62,7 @@ class LidcAnalyzerControler(QtWidgets.QWidget, Ui_LidcAnalyzer):
         self.LidcData.SendTextSignal.connect(self.progressWidget.SendTest)
         self.LidcData.AllCompletedSignal.connect(self.OnDataLoadCompleted)
         self.progressWidget.show()
-        self.LidcData.start()
+        self.LidcData.start()  # 后台线程加载数据
 
     # 初始化主界面上的一切功能
     def OnDataLoadCompleted(self):
@@ -61,7 +76,7 @@ class LidcAnalyzerControler(QtWidgets.QWidget, Ui_LidcAnalyzer):
         self.verticalScrollBar.setEnabled(True)
 
         self.ShowDicom()
-
+        self.ShowLabelMsg()
     # 显示ROI
     def OnShowROI(self):
         print("显示ROi")
@@ -93,6 +108,7 @@ class LidcAnalyzerControler(QtWidgets.QWidget, Ui_LidcAnalyzer):
             self.verticalScrollBar.setRange(0, self.MaxImgNum)
             self.verticalScrollBar.setEnabled(True)
             self.ShowDicom()
+            self.ShowLabelMsg()
     # 后一个序列
     def OnBackSeries(self):
         print("后一个序列")
@@ -104,10 +120,11 @@ class LidcAnalyzerControler(QtWidgets.QWidget, Ui_LidcAnalyzer):
             self.verticalScrollBar.setRange(0, self.MaxImgNum)
             self.verticalScrollBar.setEnabled(True)
             self.ShowDicom()
+            self.ShowLabelMsg()
 
     # 移动滑动条
     def OnMoveScrollBar(self,value):
-        self.plainTextEdit.appendPlainText(str(self.verticalScrollBar.value()))
+        #self.plainTextEdit.appendPlainText(str(self.verticalScrollBar.value()))
         self.CurrentImgNum=self.verticalScrollBar.value()
         self.ShowDicom()
     "显示一张dicom"
@@ -121,5 +138,6 @@ class LidcAnalyzerControler(QtWidgets.QWidget, Ui_LidcAnalyzer):
         #pylab.show()
 
     "显示当前series的标签信息,参数"
-    def ShowLabelMsg(self,url):
-        print("")
+    def ShowLabelMsg(self):
+        if self.LidcData.SeriesList[self.CurrentSeriesNum].isCTSeries == True:
+            self.plainTextEdit.appendPlainText("from 当前序列的xml"+str(len(self.LidcData.SeriesList[self.CurrentSeriesNum].XmlObj.readingSessionList)))

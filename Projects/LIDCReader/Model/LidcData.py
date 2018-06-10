@@ -20,6 +20,7 @@ import pydicom
 from PyQt5.QtCore import pyqtSignal, QThread, QObject, Qt, pyqtSlot
 from PyQt5.QtWidgets import QApplication
 import sys
+from Model.XmlData import XmlLabelForCT
 "描述LidcSeries"
 
 
@@ -29,6 +30,7 @@ class LidcSeries(object):
     def __init__(self, patientAbsPath, studyName, seriesName):
         self.SeriesID = seriesName
         self.SeriesAbsPath = '%s\\%s\\%s' % (patientAbsPath, studyName, seriesName)
+        self.isCTSeries = False  # 当前序列是否是CT序列,只有CT序列需要进行解刨学排序和xml解析
         # 找到series路径下的全部文件,把DCM文件和xml文件的绝对路径分别存储
         self.DcmFileList = []
         # 先检查是否存在DcmList.txt,如果存在,从txt中直接取出xml文件和排好序的dcm文件列表
@@ -40,6 +42,9 @@ class LidcSeries(object):
             self.XmlFilePath = lines[0].replace('\n', '')  # 已经取出xml文件
             for i in range(1, len(lines)):  # 读取排好序的dcm列表
                 self.DcmFileList.append(lines[i].replace('\n', ''))
+            if pydicom.read_file(self.DcmFileList[0]).Modality == "CT":  # 识别是否为CT序列
+                self.isCTSeries = True
+                self.XmlObj = XmlLabelForCT(self.XmlFilePath)
         else:
             # 没找到当前series的排序缓存文件
             itemNames = os.listdir(self.SeriesAbsPath)  # 获取该目录下的所有文件
@@ -56,7 +61,7 @@ class LidcSeries(object):
     "为DcmList按照SliceLocation排序"
 
     def SortDcmListBySliceLocation(self, dcmlist):
-        if pydicom.read_file(dcmlist[0]).Modality != "CT":  # 只有CT序列需要排序
+        if self.isCTSeries == False:  # 只有CT序列需要排序
             return dcmlist
         else:
             # 先询问有没有排序文件,如果有,直接加载,如果没有,现场排序并生成排序文件

@@ -26,7 +26,7 @@
 
       <unblindedReadNodule msg="每个unblindedReadNodule中是一个结节,可能有多个该节点并列">
         <noduleID>结节编号,这个字段没有任何规律</noduleID>
-        <characteristics msg="在同一个readingSession中,无论有多少个unblindedReadNodule节点,只有第一个里面有characteristics子节点">
+        <characteristics msg="只有直径大于3m的结节才会带有characteristics子节点">
           <!-- 每个医生只会给出一组characteristics,但是顺序和数量不一定,其中的数值不清楚是什么意思 -->
           <subtlety>5</subtlety>
           <internalStructure>1</internalStructure>
