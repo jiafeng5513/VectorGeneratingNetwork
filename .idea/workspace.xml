@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd845543-7644-44ce-b3e4-674ffcca3e5e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Projects/LIDCReader/Model/TableData.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projects/LIDCReader/Model/XmlData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/LIDCReader/Analyz/XmlPattern.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Projects/LIDCReader/Analyz/XmlPattern.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projects/LIDCReader/Controler/LidcAnalyzerControler.py" beforeDir="false" afterPath="$PROJECT_DIR$/Projects/LIDCReader/Controler/LidcAnalyzerControler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projects/LIDCReader/Model/LidcData.py" beforeDir="false" afterPath="$PROJECT_DIR$/Projects/LIDCReader/Model/LidcData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/LIDCReader/View/LidcAnalyzerView.py" beforeDir="false" afterPath="$PROJECT_DIR$/Projects/LIDCReader/View/LidcAnalyzerView.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projects/LIDCReader/Model/XmlData.py" beforeDir="false" afterPath="$PROJECT_DIR$/Projects/LIDCReader/Model/XmlData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projects/LIDCReader/View/LidcAnalyzerView.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Projects/LIDCReader/View/LidcAnalyzerView.ui" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,8 +46,8 @@
       <file leaf-file-name="LidcData.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/Model/LidcData.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="63" column="26" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="26" />
+            <state relative-caret-position="177">
+              <caret line="112" column="25" selection-start-line="112" selection-start-column="25" selection-end-line="112" selection-end-column="25" />
               <folding>
                 <element signature="e#467#476#0" expanded="true" />
               </folding>
@@ -58,14 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LidcAnalyzerControler.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LidcAnalyzerControler.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/Controler/LidcAnalyzerControler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="669">
-              <caret line="140" column="27" selection-start-line="140" selection-start-column="27" selection-end-line="140" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="184">
+              <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="80" />
             </state>
           </provider>
         </entry>
@@ -73,11 +67,8 @@
       <file leaf-file-name="TableData.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/Model/TableData.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="644">
+            <state relative-caret-position="575">
               <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-              <folding>
-                <element signature="e#1#38#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -94,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="XmlData.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="XmlData.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/Model/XmlData.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+            <state relative-caret-position="269">
+              <caret line="79" column="30" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -117,6 +108,7 @@
       <find>GetOutputPort</find>
       <find>ProgressWidget</find>
       <find>find</find>
+      <find>figureCanvas</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -134,9 +126,9 @@
         <option value="$PROJECT_DIR$/Projects/LIDCReader/Controler/LoadingControler.py" />
         <option value="$PROJECT_DIR$/Projects/LIDCReader/Demo/xmlReader.py" />
         <option value="$PROJECT_DIR$/Projects/LIDCReader/Model/TableData.py" />
+        <option value="$PROJECT_DIR$/Projects/LIDCReader/Model/XmlData.py" />
         <option value="$PROJECT_DIR$/Projects/LIDCReader/Model/LidcData.py" />
         <option value="$PROJECT_DIR$/Projects/LIDCReader/Controler/LidcAnalyzerControler.py" />
-        <option value="$PROJECT_DIR$/Projects/LIDCReader/Model/XmlData.py" />
       </list>
     </option>
   </component>
@@ -150,8 +142,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="39" />
-    <option name="y" value="-17" />
+    <option name="x" value="198" />
+    <option name="y" value="-19" />
     <option name="width" value="1400" />
     <option name="height" value="865" />
   </component>
@@ -163,6 +155,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -213,7 +206,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -407,20 +399,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="719" y="63" width="1400" height="865" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3293348" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3293348" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.3293348" />
-      <window_info anchor="bottom" x="-214" y="496" width="1920" height="389" id="Run" order="2" weight="0.41112322" />
+      <window_info active="true" anchor="bottom" x="-214" y="496" width="1920" height="389" id="Run" order="2" visible="true" weight="0.4106383" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3293348" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945474" visible="true" weight="0.22238806" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945474" visible="true" weight="0.221875" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3293348" />
       <window_info anchor="right" id="SciView" order="3" weight="0.3296875" />
       <window_info id="Structure" order="1" sideWeight="0.50054526" side_tool="true" weight="0.15884861" />
       <window_info id="Favorites" order="2" sideWeight="0.50054526" side_tool="true" weight="0.15884861" />
@@ -432,32 +422,33 @@
       <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="4" side_tool="true" weight="0.3296875" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3293348" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="8" weight="0.32978722" />
     </layout>
     <layout-to-restore>
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15885417" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32978722" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.3296875" />
+      <window_info anchor="bottom" x="-214" y="496" width="1920" height="389" id="Run" order="2" weight="0.41170213" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15885417" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" x="-214" y="496" width="1920" height="389" id="Run" order="2" weight="0.41170213" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32978722" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32978722" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="5" side_tool="true" weight="0.3296875" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32978722" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.3296875" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32978722" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32978722" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32978722" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,11 +460,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Projects/LIDCReader/Controler/LidcAnalyzerControler.py</url>
-          <line>132</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Projects/LIDCReader/Model/TableData.py</url>
           <line>15</line>
@@ -679,20 +665,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/-228292682/vtk/vtkIOKitPython/vtkDICOMImageReader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="304" column="8" selection-start-line="304" selection-start-column="8" selection-end-line="304" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/-228292682/vtk/vtkFiltersKitPython/vtkSphereSource.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="116" column="19" selection-start-line="116" selection-start-column="19" selection-end-line="116" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/-228292682/vtk/vtkIOKitPython/vtkDICOMImageReader.py" />
+    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/-228292682/vtk/vtkFiltersKitPython/vtkSphereSource.py" />
     <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/qvtkWithPy.py" />
     <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/xmlReader.py" />
     <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/-228292682/PyQt5/QtWidgets/QApplication.py">
@@ -715,13 +689,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/View/main.py" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/ide/ide-scripting.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/ide/ide-scripting.groovy" />
     <entry file="file://D:/Libraries/Anaconda3/Lib/genericpath.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
@@ -803,13 +771,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/Libraries/Anaconda3/Lib/bs4/element.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="683">
-          <caret line="1806" selection-start-line="1806" selection-end-line="1806" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/Libraries/Anaconda3/Lib/bs4/element.py" />
     <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/Demo/xmlReader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -819,31 +781,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/Model/TableData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
+        <state relative-caret-position="575">
           <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-          <folding>
-            <element signature="e#1#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/Model/LidcData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="63" column="26" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="26" />
-          <folding>
-            <element signature="e#467#476#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/Controler/LidcAnalyzerControler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="140" column="27" selection-start-line="140" selection-start-column="27" selection-end-line="140" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -859,8 +798,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/Model/XmlData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+        <state relative-caret-position="269">
+          <caret line="79" column="30" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/Model/LidcData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="112" column="25" selection-start-line="112" selection-start-column="25" selection-end-line="112" selection-end-column="25" />
+          <folding>
+            <element signature="e#467#476#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/LIDCReader/Controler/LidcAnalyzerControler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="80" />
         </state>
       </provider>
     </entry>

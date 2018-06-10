@@ -20,7 +20,8 @@ import pydicom
 from PyQt5.QtCore import pyqtSignal, QThread, QObject, Qt, pyqtSlot
 from PyQt5.QtWidgets import QApplication
 import sys
-from Model.XmlData import XmlLabelForCT
+from Model.XmlData import XmlLabelForCT, XmlLabelSlim
+
 "描述LidcSeries"
 
 
@@ -45,6 +46,9 @@ class LidcSeries(object):
             if pydicom.read_file(self.DcmFileList[0]).Modality == "CT":  # 识别是否为CT序列
                 self.isCTSeries = True
                 self.XmlObj = XmlLabelForCT(self.XmlFilePath)
+            else:
+                self.isCTSeries = False
+                self.XmlObj = XmlLabelSlim(self.XmlFilePath)
         else:
             # 没找到当前series的排序缓存文件
             itemNames = os.listdir(self.SeriesAbsPath)  # 获取该目录下的所有文件
@@ -122,7 +126,7 @@ class LidcData(QThread):
                 elif itemName == "LIDC-IDRI_MetaData.csv":
                     self.MetaDataFilePath = item_abs_path
             self.SetUpProgressBarSignal.emit(len(self.PatientList))  # 发出信号,总长度探测OK
-            self.SendTextSignal.emit("根目装载成功!检测到"+str(len(self.PatientList))+"个patient..")
+            self.SendTextSignal.emit("根目装载成功!检测到" + str(len(self.PatientList)) + "个patient..")
         else:
             self.SendTextSignal.emit("路径不存在")
         # 迭代PatientList,找到所有的序列
@@ -135,18 +139,19 @@ class LidcData(QThread):
             self.MoveSignal.emit()
         self.SendTextSignal.emit("全部处理完成!")
         self.AllCompletedSignal.emit()
+
     def __del__(self):
         self.wait()
 
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    obj = LidcData()# in Asus Laptop
+    obj = LidcData()  # in Asus Laptop
     obj.init("F:\\TCIA_LIDC-IDRI\LIDC-IDRI")
     # obj = LidcData("G:\\TCIA_LIDC-IDRI\\LIDC-IDRI-Sample")  # in B234 Desktop
     obj.start()
     print("异步")
-    for seri in obj.SeriesList:#start是异步方法,这样写是不会输出任何东西的
+    for seri in obj.SeriesList:  # start是异步方法,这样写是不会输出任何东西的
         print(seri.SeriesID)
         print("xml" + seri.XmlFilePath)
         print(len(seri.DcmFileList))
