@@ -139,9 +139,8 @@ class LidcAnalyzerControler(QtWidgets.QWidget, Ui_LidcAnalyzer):
 
     "显示当前series的标签信息,参数"
     def ShowLabelMsg(self):
-        self.lineEdit_StudyID.setText(self.LidcData.SeriesList[self.CurrentSeriesNum].XmlObj.StudyInstanceUID)
-        seriesID = self.LidcData.SeriesList[self.CurrentSeriesNum].XmlObj.SeriesInstanceUID
-        self.lineEdit_SeriesID.setText(seriesID)
-
         if self.LidcData.SeriesList[self.CurrentSeriesNum].isCTSeries == True:
+            self.lineEdit_StudyID.setText(self.LidcData.SeriesList[self.CurrentSeriesNum].XmlObj.StudyInstanceUID)
+            seriesID = self.LidcData.SeriesList[self.CurrentSeriesNum].XmlObj.SeriesInstanceUID
+            self.lineEdit_SeriesID.setText(seriesID)
             self.plainTextEdit.appendPlainText("from 当前序列的xml"+str(len(self.LidcData.SeriesList[self.CurrentSeriesNum].XmlObj.readingSessionList)))
