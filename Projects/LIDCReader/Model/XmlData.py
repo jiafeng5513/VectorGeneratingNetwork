@@ -137,13 +137,14 @@ class XmlLabelSlim():
             markup = xml_file.read()
         xml = BeautifulSoup(markup, features="xml")
         print("构造非CT序列的xml文件对象")
-        self.SeriesInstanceUID = xml.LidcReadMessage.ResponseHeader.SeriesInstanceUid.text
-        self.StudyInstanceUID = xml.LidcReadMessage.ResponseHeader.StudyInstanceUID.text
+        self.SeriesInstanceUID = xml.IdriReadMessage.ResponseHeader.SeriesInstanceUID.text
+        self.StudyInstanceUID = xml.IdriReadMessage.ResponseHeader.StudyInstanceUID.text
 
 
 if __name__ == '__main__':
     # xml=XmlLabel('F:/TCIA_LIDC-IDRI/LIDC-IDRI/LIDC-IDRI-0001/1.3.6.1.4.1.14519.5.2.1.6279.6001.298806137288633453246975630178/1.3.6.1.4.1.14519.5.2.1.6279.6001.179049373636438705059720603192/069.xml')
-    xml = XmlLabelForCT("F:/TCIA_LIDC-IDRI/labels/072.xml")
+    xml = XmlLabelForCT("F:/TCIA_LIDC-IDRI/LIDC-IDRI/LIDC-IDRI-0002/1.3.6.1.4.1.14519.5.2.1.6279.6001.490157381160200744295382098329/1.3.6.1.4.1.14519.5.2.1.6279.6001.619372068417051974713149104919/071.xml")
+
     print("Num Of readingSession:" + str(len(xml.readingSessionList)))
     print("Num of Node :" + str(len(xml.readingSessionList[0].NoduleList)))
     print("Num of Node :" + str(len(xml.readingSessionList[1].NoduleList)))
