@@ -9,3 +9,6 @@
 *.h5
 .idea/workspace.xml
 Tools
+Projects/unet/augment/*
+Projects/unet/npydata/*
+Projects/unet/result/*
