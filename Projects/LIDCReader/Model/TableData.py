@@ -33,3 +33,9 @@ class TableData():
     def Model_setItem(self, row, column, data):
         '''表格添加数据：第row行，column列数据更改为data'''
         self.DataModel.setItem(row, column, QStandardItem(data))
+
+    "清除表格数据"
+    def Model_clearnItem(self):
+        for i in range(4):
+            for j in range(4):
+                self.DataModel.setItem(i, j, QStandardItem(""))

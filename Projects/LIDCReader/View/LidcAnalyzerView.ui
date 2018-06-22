@@ -6,198 +6,211 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1024</width>
-    <height>641</height>
+    <width>862</width>
+    <height>625</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Lidc Analyzer</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="2" column="8" rowspan="5">
-    <widget class="QGroupBox" name="groupBox_2">
-     <property name="title">
-      <string>OutPut</string>
-     </property>
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="2" column="0">
-       <widget class="QPlainTextEdit" name="plainTextEdit">
-        <property name="minimumSize">
-         <size>
-          <width>300</width>
-          <height>0</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="5" column="1" colspan="4">
-    <widget class="QLineEdit" name="lineEdit_SeriesID">
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0" colspan="2">
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
     <widget class="QPushButton" name="pushButton_OpenLidc">
      <property name="text">
       <string>打开LIDC-IDRI文件夹</string>
      </property>
     </widget>
    </item>
-   <item row="6" column="3">
-    <widget class="QLabel" name="label_6">
-     <property name="text">
-      <string>uonNodule Count:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="1" colspan="4">
-    <widget class="QLineEdit" name="lineEdit_StudyID">
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="label_3">
-     <property name="text">
-      <string>Parient ID:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="0">
-    <widget class="QLabel" name="label_4">
-     <property name="text">
-      <string>Study ID:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="1" colspan="2">
-    <widget class="QLineEdit" name="lineEdit_Type">
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="0">
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>Series ID:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1" colspan="4">
-    <widget class="QLineEdit" name="lineEdit_PatientID">
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="4">
-    <widget class="QLineEdit" name="lineEdit_nonNoduleCount">
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="2" colspan="4">
+   <item row="0" column="1">
     <widget class="QLineEdit" name="lineEdit_LidcRootDir"/>
    </item>
-   <item row="6" column="0">
-    <widget class="QLabel" name="label_5">
-     <property name="text">
-      <string>Type：</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="5">
-    <widget class="QPushButton" name="pushButton_ShowROI">
-     <property name="text">
-      <string>显示ROI</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="5">
-    <widget class="QPushButton" name="pushButton_ShowLung">
-     <property name="text">
-      <string>启动肺实质分割</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0" rowspan="2" colspan="7">
-    <layout class="QGridLayout" name="gridLayout_ForImg"/>
-   </item>
-   <item row="6" column="5">
-    <widget class="QPushButton" name="pushButton_FrontSeries">
-     <property name="text">
-      <string>前一个序列</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="7" rowspan="2">
-    <widget class="QScrollBar" name="verticalScrollBar">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="6" colspan="2">
-    <widget class="QPushButton" name="pushButton_ShowLocus">
-     <property name="text">
-      <string>显示locus</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="6" colspan="2">
-    <widget class="QPushButton" name="pushButton_ShowLabel">
-     <property name="text">
-      <string>生成标注图</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="5" colspan="3">
-    <widget class="QPushButton" name="pushButton_ExportLabels">
-     <property name="text">
-      <string>导出当前序列的全部标注图</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="6" colspan="2">
-    <widget class="QPushButton" name="pushButton_BackSeries">
-     <property name="text">
-      <string>后一个序列</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="6" colspan="2">
+   <item row="0" column="2">
     <widget class="QPushButton" name="pushButton_StartAnalyze">
      <property name="text">
       <string>开始分析</string>
      </property>
     </widget>
    </item>
-   <item row="0" column="8" rowspan="2">
+   <item row="3" column="0" colspan="2">
+    <widget class="QSplitter" name="splitter_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QTableView" name="tableView">
+      <property name="minimumSize">
+       <size>
+        <width>390</width>
+        <height>150</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>180</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="plainTextEdit">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>240</height>
+       </size>
+      </property>
+     </widget>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="maximumSize">
+      <size>
+       <width>80</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Parient ID:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QLineEdit" name="lineEdit_PatientID">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="maximumSize">
+      <size>
+       <width>80</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Study ID:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QLineEdit" name="lineEdit_StudyID">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="maximumSize">
+      <size>
+       <width>80</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Series ID:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <widget class="QLineEdit" name="lineEdit_SeriesID">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="3">
+    <widget class="QScrollBar" name="SliceScrollBar">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="3">
+    <widget class="QSplitter" name="splitter">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QWidget" name="layoutWidget">
+      <layout class="QGridLayout" name="gridLayout_ForImg">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetNoConstraint</enum>
+       </property>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <layout class="QGridLayout" name="gridLayout_ForMask"/>
+     </widget>
+    </widget>
+   </item>
+   <item row="3" column="2" rowspan="4">
     <widget class="QGroupBox" name="groupBox">
      <property name="maximumSize">
       <size>
-       <width>16777215</width>
+       <width>200</width>
        <height>16777215</height>
       </size>
      </property>
      <property name="title">
-      <string>Label Msg</string>
+      <string>Functions</string>
      </property>
-     <layout class="QGridLayout" name="gridLayout_3">
-      <item row="0" column="0">
-       <widget class="QTableView" name="tableView">
-        <property name="minimumSize">
-         <size>
-          <width>300</width>
-          <height>300</height>
-         </size>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="6" column="0">
+       <widget class="QPushButton" name="pushButton_FrontSeries">
+        <property name="text">
+         <string>前一个序列</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="pushButton_ShowROI">
+        <property name="text">
+         <string>显示ROI</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QPushButton" name="pushButton_ShowLabel">
+        <property name="text">
+         <string>生成标注图</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QPushButton" name="pushButton_ShowLocus">
+        <property name="text">
+         <string>显示locus</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="3">
+       <widget class="QPushButton" name="pushButton_ExportLabels">
+        <property name="text">
+         <string>导出当前序列的全部标注图</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QPushButton" name="pushButton_BackSeries">
+        <property name="text">
+         <string>后一个序列</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0" colspan="2">
+       <widget class="QPushButton" name="pushButton_ShowLung">
+        <property name="text">
+         <string>启动肺实质分割</string>
         </property>
        </widget>
       </item>
