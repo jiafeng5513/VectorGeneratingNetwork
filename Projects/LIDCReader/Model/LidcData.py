@@ -120,13 +120,13 @@ class LidcData(QThread):
     SetUpProgressBarSignal = pyqtSignal(int)
     AllCompletedSignal = pyqtSignal()
 
-    def __init__(self):
+    def __init__(self,isCtOnly):
         super(LidcData, self).__init__()
         self.SeriesList = []
         self.PatientList = []
         self.MetaDataFilePath = ""
         self.RootDir = ""
-
+        self.isCtonly = isCtOnly
     def init(self, rootdir):
         self.RootDir = rootdir
 
@@ -153,8 +153,17 @@ class LidcData(QThread):
             for study in studies:
                 serieses = os.listdir(os.path.join(Patient, study))  # series是当前study下的series文件夹的名字
                 for series in serieses:
-                    self.SeriesList.append(LidcSeries(Patient, study, series))
-                    self.SendTextSignal.emit("第" + str(len(self.SeriesList)) + "个序列处理完成!")
+                    #在这里判断刚刚建立的是不是CT序列?
+                    tmpSeries = LidcSeries(Patient, study, series)
+                    if self.isCtonly==True:
+                        if tmpSeries.isCTSeries ==True:
+                            self.SeriesList.append(tmpSeries)
+                            self.SendTextSignal.emit("第" + str(len(self.SeriesList)) + "个序列处理完成!")
+                        else:
+                            self.SendTextSignal.emit("第" + str(len(self.SeriesList)) + "个序列不是CT序列!")
+                    else:
+                        self.SeriesList.append(tmpSeries)
+                        self.SendTextSignal.emit("第" + str(len(self.SeriesList)) + "个序列处理完成!")
             self.MoveSignal.emit()
         self.SendTextSignal.emit("全部处理完成!")
         self.AllCompletedSignal.emit()

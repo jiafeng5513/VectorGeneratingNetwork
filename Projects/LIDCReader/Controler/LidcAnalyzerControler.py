@@ -11,41 +11,32 @@ import matplotlib.pyplot as plt
 from Model.TableData import TableData
 from PyQt5.QtGui import QStandardItemModel
 from PyQt5.QtWidgets import QHeaderView
+from utils import MaskGenerator
+
 
 class LidcAnalyzerControler(QtWidgets.QWidget, Ui_LidcAnalyzer):
     TableDataSignal = pyqtSignal(int, int, str)
     TableDataCleanSignal = pyqtSignal()
+
     def __init__(self):
         super(LidcAnalyzerControler, self).__init__()
         self.setupUi(self)
-        # 尝试绘图
-        #self.figure = pylab.gcf()  # 返回当前的figure
-        #self.DcmCanvas = figureCanvas(self.figure)
-        #self.DcmCanvas2 = figureCanvas(self.figure)
-
+        # 绘图
         self.DcmFigure = plt.figure(1)
         plt.title('Dcm Img')
         self.MaskFigure = plt.figure(2)
         plt.title('Mask Img')
-
         self.DcmCanvas = figureCanvas(self.DcmFigure)
         self.MaskCanvas = figureCanvas(self.MaskFigure)
-
         self.gridLayout_ForImg.addWidget(self.DcmCanvas)
         self.gridLayout_ForMask.addWidget(self.MaskCanvas)
         # 绑定信号槽
         self.pushButton_OpenLidc.clicked.connect(self.OnOpenLidcFolder)
-        self.pushButton_ShowROI.clicked.connect(self.OnShowROI)
-        self.pushButton_ShowLocus.clicked.connect(self.OnShowLocus)
-        self.pushButton_ShowLung.clicked.connect(self.OnShowLung)
-        self.pushButton_ShowLabel.clicked.connect(self.OnShowLabel)
         self.pushButton_ExportLabels.clicked.connect(self.OnExportLabel)
         self.pushButton_FrontSeries.clicked.connect(self.OnFrontSeries)
         self.pushButton_BackSeries.clicked.connect(self.OnBackSeries)
         self.pushButton_StartAnalyze.clicked.connect(self.OnAnalyzeStart)
         self.SliceScrollBar.valueChanged.connect(self.OnMoveScrollBar)
-        #self.gridLayout_ForImg.addWidget(self.DcmCanvas)
-        #self.gridLayout_ForMask.addWidget(self.DcmCanvas2)
         self.SliceScrollBar.setEnabled(False)
 
         self.TableData = TableData()  # 声明类
@@ -55,8 +46,14 @@ class LidcAnalyzerControler(QtWidgets.QWidget, Ui_LidcAnalyzer):
         self.tableView.horizontalHeader().setStyleSheet("QHeaderView::section{background:skyblue;}")
         self.tableView.verticalHeader().setStyleSheet("QHeaderView::section{background:skyblue;}")
         self.TableDataSignal.connect(self.TableData.Model_setItem)  # 这里采用信号槽来绑定Model_setItem进行数据更新
-
         self.TableDataCleanSignal.connect(self.TableData.Model_clearnItem)
+        self.radioButton_ShowLung.clicked.connect(self.OnClickedRadioButton_ShowLung)
+        self.radioButton_ShowColorLabel.clicked.connect(self.OnClickedRadioButton_ShowColorLabel)
+        self.checkBox_CtOnly.clicked.connect(self.OnClickedCheckBox_CtOnly)
+        # 初始化
+        self.radioButton_ShowLung.setChecked(True)
+        self.radioButton_ShowColorLabel.setChecked(False)
+        self.checkBox_CtOnly.setChecked(True)
 
     # =======================================================================
         """
@@ -64,11 +61,16 @@ class LidcAnalyzerControler(QtWidgets.QWidget, Ui_LidcAnalyzer):
         """
     # 打开Lidc-idri文件夹
     def OnOpenLidcFolder(self):
+        self.checkBox_CtOnly.setEnabled(True)
         dir_path = QFileDialog.getExistingDirectory(self, "choose directory", "F:\\TCIA_LIDC-IDRI\\LIDC-IDRI\\")
         self.lineEdit_LidcRootDir.setText(dir_path)
+
+    # 开始分析
     def OnAnalyzeStart(self):
         print("开始分析")
-        self.LidcData = LidcData()
+        # 一旦开始分析,就不能再更改CtOnly的状态,除非重新选择目录
+        self.checkBox_CtOnly.setEnabled(False)
+        self.LidcData = LidcData(isCtOnly=self.checkBox_CtOnly.isChecked())
         self.LidcData.init(self.lineEdit_LidcRootDir.text())
         self.progressWidget = LoadingControler()
         self.LidcData.SetUpProgressBarSignal.connect(self.progressWidget.SetUpProgressBar)
@@ -91,22 +93,18 @@ class LidcAnalyzerControler(QtWidgets.QWidget, Ui_LidcAnalyzer):
 
         self.ShowDicom()
         self.ShowLabelMsg()
-    # 显示ROI
-    def OnShowROI(self):
-        print("显示ROi")
-        self.TableDataCleanSignal.emit()
 
-    # 显示locus
-    def OnShowLocus(self):
-        print("显示Locus")
+    # 点选"显示肺实质分割结果"RadioButton
+    def OnClickedRadioButton_ShowLung(self,checked):
+        self.ShowDicom()
 
-    # 启动肺实质分割
-    def OnShowLung(self):
-        print("启动肺实质分割")
+    # 点选"显示语义分割标签图"RadioButton
+    def OnClickedRadioButton_ShowColorLabel(self,checked):
+        self.ShowDicom()
 
-    # 生成标注图
-    def OnShowLabel(self):
-        print("生成标注图")
+    # 改变"忽略非CT标签"CheckBox的状态(默认选中)
+    def OnClickedCheckBox_CtOnly(self,checked):
+        print(str(checked))
 
     # 导出当前series的全部标注图
     def OnExportLabel(self):
@@ -124,6 +122,7 @@ class LidcAnalyzerControler(QtWidgets.QWidget, Ui_LidcAnalyzer):
             self.SliceScrollBar.setEnabled(True)
             self.ShowDicom()
             self.ShowLabelMsg()
+
     # 后一个序列
     def OnBackSeries(self):
         print("后一个序列")
@@ -139,27 +138,28 @@ class LidcAnalyzerControler(QtWidgets.QWidget, Ui_LidcAnalyzer):
 
     # 移动滑动条
     def OnMoveScrollBar(self,value):
-        #self.plainTextEdit.appendPlainText(str(self.SliceScrollBar.value()))
         self.CurrentImgNum=self.SliceScrollBar.value()
         self.ShowDicom()
+
     "显示一张dicom"
     def ShowDicom(self):
         url=self.LidcData.SeriesList[self.CurrentSeriesNum].DcmFileList[self.CurrentImgNum]
         ds = pydicom.read_file(url)
         pixel_bytes = ds.PixelData
         pix = ds.pixel_array
-        #pylab.imshow(ds.pixel_array, cmap=pylab.cm.bone)
-        #plt.imshow(ds.pixel_array,cmap=pylab.cm.bone)
 
         ax = self.DcmFigure.add_subplot(111)
-        ax.imshow(ds.pixel_array,cmap=pylab.cm.bone)  # 默认配置
+        ax.imshow(ds.pixel_array,cmap=pylab.cm.bone)  # 原图
 
+        lungImg,labelimg = MaskGenerator.GenerateLabel(ds.pixel_array)  # 生成图
         ax2 = self.MaskFigure.add_subplot(111)
-        ax2.imshow(ds.pixel_array)
+        if self.radioButton_ShowLung.isChecked() is True:
+            ax2.imshow(lungImg, cmap=pylab.cm.bone)
+        else:
+            ax2.imshow(labelimg, cmap=pylab.cm.bone)
 
         self.DcmCanvas.draw()
         self.MaskCanvas.draw()
-        #pylab.show()
 
     "显示当前series的标签信息,参数"
     def ShowLabelMsg(self):

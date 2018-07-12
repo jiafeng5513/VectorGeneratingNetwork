@@ -165,6 +165,34 @@
       <string>Functions</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
+      <item row="1" column="0">
+       <widget class="QRadioButton" name="radioButton_ShowColorLabel">
+        <property name="text">
+         <string>显示语义分割标签图</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QRadioButton" name="radioButton_ShowLung">
+        <property name="text">
+         <string>显示肺实质分割结果</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QCheckBox" name="checkBox_CtOnly">
+        <property name="text">
+         <string>忽略非CT序列</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="pushButton_ExportLabels">
+        <property name="text">
+         <string>导出标签图</string>
+        </property>
+       </widget>
+      </item>
       <item row="6" column="0">
        <widget class="QPushButton" name="pushButton_FrontSeries">
         <property name="text">
@@ -172,45 +200,10 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="QPushButton" name="pushButton_ShowROI">
-        <property name="text">
-         <string>显示ROI</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="0">
-       <widget class="QPushButton" name="pushButton_ShowLabel">
-        <property name="text">
-         <string>生成标注图</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QPushButton" name="pushButton_ShowLocus">
-        <property name="text">
-         <string>显示locus</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0" colspan="3">
-       <widget class="QPushButton" name="pushButton_ExportLabels">
-        <property name="text">
-         <string>导出当前序列的全部标注图</string>
-        </property>
-       </widget>
-      </item>
       <item row="7" column="0">
        <widget class="QPushButton" name="pushButton_BackSeries">
         <property name="text">
          <string>后一个序列</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0" colspan="2">
-       <widget class="QPushButton" name="pushButton_ShowLung">
-        <property name="text">
-         <string>启动肺实质分割</string>
         </property>
        </widget>
       </item>

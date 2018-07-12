@@ -8,10 +8,12 @@ Vector-Generating Network
 用于肺结节分类和恶性预测,实现自动定位肺结节的位置,对每个结节进行恶性程度预测,并最终给出该病人患病的概率<br>
 
 ### 主要思路
-1. 使用基于U-Net的NetA进行结节的定位和分割<br>
-2. 使用NetB进行结节的恶性程度分类<br>
-3. 使用特征向量描述一个完整的病例<br>
-4. 使用NetC给出诊断结论<br>
+1. 使用基于U-Net的网络进行语义分割<br>
+2. 数据集用LIDC-IDRI<br>
+3. 使用LidrReader读取数据集并生成语义分割所需的标签图<br>
+4. 输入网络的训练数据图片应该只含有肺部区域<br>
+5. 输入网络的标签图片应该是这样的,非肺部区域一种颜色,肺部非结节一种颜色,肺结节一种颜色.<br>
+6. 考虑到重负样本的问题,可能要引入非结节的标注<br>
 
 ### 数据集
 1. [Luna16](https://luna16.grand-challenge.org/):<br>
@@ -76,3 +78,8 @@ Vector-Generating Network
 3. cudnn-9.0-windows10-x64-v7.zip<br>
 4. tensorflow 1.7.0<br>
 5. keras 2.1.6<br>
+
+
+### New Features
+1. LidcAnalyzer现在可以实现基于传统方法的肺实质分割,生成语义分割标签,进行ROI标注:<br>
+![image](https://github.com/AngelaViVi/VectorGeneratingNetwork/tree/master/log/shot/LidcTool.gif)
