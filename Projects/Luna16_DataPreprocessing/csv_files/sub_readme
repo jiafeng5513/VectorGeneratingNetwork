@@ -1,1 +1,0 @@
-将candidates.csv文件的class头改成nodule_class并存为candidates_class.csv，否则会报错。
