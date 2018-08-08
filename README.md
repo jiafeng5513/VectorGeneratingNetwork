@@ -36,7 +36,8 @@ Vector-Generating Network
            LIDC-IDRI_MetaData.csv中给出了每个patient ID,扫描形式,seriesID的对应关系以及一些其他的元数据信息<br>
            tcia-diagnosis-data-2012-04-20.xls中存储了158个病人的详细诊断信息,包括病人层次的诊断结论,原发位置,确诊方式以及结节层次的诊断结论和确诊方式等<br>
    **读取程序**:请看[`./Project/LIDCReader`](https://github.com/AngelaViVi/VectorGeneratingNetwork/tree/master/Projects/LIDCReader).<br>
-### 参考项目
+   
+### 参考
 1. [DSB2017第一名:grt123](https://github.com/lfz/DSB2017)<br>
 2. [Unet细胞分割](https://github.com/zhixuhao/unet)<br>
    对应的CSDN博客:[全卷机神经网络图像分割(U-net)-keras实现](https://blog.csdn.net/u012931582/article/details/70215756)<br>
@@ -51,20 +52,22 @@ Vector-Generating Network
 8. [lidc nodule detection with CNN and LSTM network](https://github.com/zhwhong/lidc_nodule_detection)<br>
    这个项目中对LIDC-IDRI的读取部分非常值得参考<br>
    对应的博客文章:[LIDC-IDRI肺结节Dicom数据集解析与总结](https://www.jianshu.com/p/9c1facf70b01)<br>
+9. [各领域公开数据集下载](https://zhuanlan.zhihu.com/p/25138563)<br>
+10. [Kaggle](https://www.kaggle.com/)是主要为开发商和数据科学家提供举办机器学习竞赛、托管数据库、编写和分享代码的平台。<br>
+
 
 ### 工具
 1. Raw/mhd图像查看,三维检视:[Fiji](http://imagej.net/Fiji)<br>
 2. dcm/DICOM标准文件查看:[RadiAnt](https://www.radiantviewer.com/)<br>
 3. 绘图工具:[Draw.io](https://www.draw.io/)<br>
 
-### 参考文献
+### 文献
 见[./Reference/](https://github.com/AngelaViVi/VectorGeneratingNetwork/tree/master/Reference)<br>
 
 ### 工程说明
 1. ./log/:存放开发日志,记录一些想法和debug日志等信息.<br>
 2. ./Project/:具体工程的父目录.<br>
 3. ./Reference/:存放参考文献,主要是论文和论文的翻译版.<br>
-4. ./Tools/:存放Protable的工具.<br>
 
 ### 工程结构约定:
 1. 按照上述目录结构存放<br>
@@ -81,5 +84,4 @@ Vector-Generating Network
 
 
 ### New Features
-1. LidcAnalyzer现在可以实现基于传统方法的肺实质分割,生成语义分割标签,进行ROI标注:<br>
-![image](https://github.com/AngelaViVi/VectorGeneratingNetwork/blob/master/log/shot/LidcTool.gif)
+数据分析结束,清理工程结构
