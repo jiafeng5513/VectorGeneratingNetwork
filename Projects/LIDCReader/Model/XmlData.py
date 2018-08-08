@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-
+import numpy as np
 """
 两个职责:
     1.从绝对路径加载xml文件并阅读.
@@ -112,8 +112,8 @@ class XmlLabelForCT():
                     _roi.inclusion = roi.inclusion.text
                     edgeMapList = roi.find_all("edgeMap")
                     for edgeMap in edgeMapList:
-                        _Point = Point(int(edgeMap.xCoord.text), int(edgeMap.yCoord.text))
-                        _roi.edgeMap.append(_Point)
+                        # _Point = Point(int(edgeMap.xCoord.text), int(edgeMap.yCoord.text))
+                        _roi.edgeMap.append([int(edgeMap.xCoord.text), int(edgeMap.yCoord.text)])
                     _nodule.RoiList.append(_roi)
                 _readingSession.NoduleList.append(_nodule)
             nonNodules = reading_session.find_all("nonNodule")
@@ -127,6 +127,16 @@ class XmlLabelForCT():
                 _readingSession.nonNoduleList.append(_nonNode)
             self.readingSessionList.append(_readingSession)
 
+    def getRoiListBySOP_UID(self,SOP_UID):
+        ROIList=[]
+        for _readingSession in self.readingSessionList:
+            for Nodule in _readingSession.NoduleList:
+                for roi in Nodule.RoiList:
+                    if roi.imageSOP_UID == SOP_UID:
+                        ROIList.append(roi.edgeMap)
+        return ROIList
+
+
 
 " 精简版XML文件对象,用于描述DX和CR扫描序列的xml标记文档 "
 
@@ -136,17 +146,18 @@ class XmlLabelSlim():
         with open(dir, 'r') as xml_file:
             markup = xml_file.read()
         xml = BeautifulSoup(markup, features="xml")
-        print("构造非CT序列的xml文件对象")
+        #print("构造非CT序列的xml文件对象")
         self.SeriesInstanceUID = xml.IdriReadMessage.ResponseHeader.SeriesInstanceUID.text
         self.StudyInstanceUID = xml.IdriReadMessage.ResponseHeader.StudyInstanceUID.text
 
 
 if __name__ == '__main__':
     # xml=XmlLabel('F:/TCIA_LIDC-IDRI/LIDC-IDRI/LIDC-IDRI-0001/1.3.6.1.4.1.14519.5.2.1.6279.6001.298806137288633453246975630178/1.3.6.1.4.1.14519.5.2.1.6279.6001.179049373636438705059720603192/069.xml')
-    xml = XmlLabelForCT("F:/TCIA_LIDC-IDRI/LIDC-IDRI/LIDC-IDRI-0002/1.3.6.1.4.1.14519.5.2.1.6279.6001.490157381160200744295382098329/1.3.6.1.4.1.14519.5.2.1.6279.6001.619372068417051974713149104919/071.xml")
-
+    xml = XmlLabelForCT("G:/TCIA_LIDC-IDRI/LIDC-IDRI/LIDC-IDRI-0002/1.3.6.1.4.1.14519.5.2.1.6279.6001.490157381160200744295382098329/1.3.6.1.4.1.14519.5.2.1.6279.6001.619372068417051974713149104919/071.xml")
     print("Num Of readingSession:" + str(len(xml.readingSessionList)))
     print("Num of Node :" + str(len(xml.readingSessionList[0].NoduleList)))
+    #print("Num of ROI :" + str(len(xml.readingSessionList[0].NoduleList[0].RoiList)))
+
     print("Num of Node :" + str(len(xml.readingSessionList[1].NoduleList)))
     print("Num of Node :" + str(len(xml.readingSessionList[2].NoduleList)))
     print("Num of Node :" + str(len(xml.readingSessionList[3].NoduleList)))
