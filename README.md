@@ -83,3 +83,4 @@ Vector-Generating Network
 ### New Features
 1. LidcAnalyzer现在可以实现基于传统方法的肺实质分割,生成语义分割标签,进行ROI标注:<br>
 ![image](https://github.com/AngelaViVi/VectorGeneratingNetwork/blob/master/log/shot/LidcTool.gif)
+2. 本分支停止开发,其中LidcAnalyzer具备一个qvtk的界面,见上述动图,其中我需要的功能已经转移到一个没有界面的py脚本中并将在以后的分支中使用.
